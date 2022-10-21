@@ -2,6 +2,7 @@
 Data/
 tmp/
 tmp_bert2/
+Archive/
 
 df.csv
 df.pkl
