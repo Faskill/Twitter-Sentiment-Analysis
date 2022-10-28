@@ -103,7 +103,7 @@ for i in range(1,51,1):
 flat_labels = list(np.concatenate(labels).flat)
 ```
 
-The results of this API are underwhelming for our Twitter data, **it only reaches an accuracy of 0.72**.
+The results of this API are moderate for our Twitter data, **it reaches an accuracy of 0.76**.
 
 These results are not very good for a paid algorithm that still takes time to run because the number of records
 that it can analyze is limited to 10/request, which is why I would not currently advise this method.
@@ -134,14 +134,14 @@ We have tried 2 kinds of embeddings for this project :
 
 We used 3 kind of models with our dataset :
 
-- Convolutional Neural Network (CNN) 
+- Simple Artificial Neural Network (ANN) 
 - RNN with Long Short Term Memory (LSTM) layer 
 - RNN with Gated Recurrent Unit (GRU) layer
 
-The most performant model is the RNN with the GRU layer using BERT embedding, with an **accuracy of 0.776 on the test set**.
+The most performant model is the RNN with the GRU layer using BERT embedding, with an **accuracy of 0.796 on the test set**.
 
 We have used the smallest SBERT model (L-2 H-128) for this implementation because of computing limitations, but
-we could probably **further increase the accuracy by using a better performing compute**.
+we could probably **further increase the accuracy by using a larger and more performant BERT model (such as Large BERT)**.
 
 Here is the implementation :
 

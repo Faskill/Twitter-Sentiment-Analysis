@@ -1058,7 +1058,7 @@ What's more, <strong>the free tier only enables 5000 requests per month</strong>
     <span class="pl-s1">labels</span>.<span class="pl-en">append</span>(<span class="pl-s1">azure_label</span>)
 
 <span class="pl-s1">flat_labels</span> <span class="pl-c1">=</span> <span class="pl-en">list</span>(<span class="pl-s1">np</span>.<span class="pl-en">concatenate</span>(<span class="pl-s1">labels</span>).<span class="pl-s1">flat</span>)</pre></div>
-<p>The results of this API are underwhelming for our Twitter data, <strong>it only reaches an accuracy of 0.72</strong>.</p>
+<p>The results of this API are moderate for our Twitter data, <strong>it reaches an accuracy of 0.76</strong>.</p>
 <p>These results are not very good for a paid algorithm that still takes time to run because the number of records
 that it can analyze is limited to 10/request, which is why I would not currently advise this method.</p>
 <p>It is possible though that this API is more optimized for other kinds of data such as reviews.</p>
@@ -1077,13 +1077,13 @@ that it can analyze is limited to 10/request, which is why I would not currently
 <h3><a id="user-content-32-choosing-the-best-model" class="anchor" aria-hidden="true" href="#32-choosing-the-best-model"><span aria-hidden="true" class="octicon octicon-link"></span></a>3.2 Choosing the best Model</h3>
 <p>We used 3 kind of models with our dataset :</p>
 <ul>
-<li>Convolutional Neural Network (CNN)</li>
+<li>Simple Artificial Neural Network (ANN)</li>
 <li>RNN with Long Short Term Memory (LSTM) layer</li>
 <li>RNN with Gated Recurrent Unit (GRU) layer</li>
 </ul>
-<p>The most performant model is the RNN with the GRU layer using BERT embedding, with an <strong>accuracy of 0.776 on the test set</strong>.</p>
+<p>The most performant model is the RNN with the GRU layer using BERT embedding, with an <strong>accuracy of 0.796 on the test set</strong>.</p>
 <p>We have used the smallest SBERT model (L-2 H-128) for this implementation because of computing limitations, but
-we could probably <strong>further increase the accuracy by using a better performing compute</strong>.</p>
+we could probably <strong>further increase the accuracy by using a larger and more performant BERT model (such as Large BERT)</strong>.</p>
 <p>Here is the implementation :</p>
 <div class="highlight highlight-source-python"><pre><span class="pl-k">from</span> <span class="pl-s1">official</span>.<span class="pl-s1">nlp</span> <span class="pl-k">import</span> <span class="pl-s1">optimization</span>  <span class="pl-c"># to create AdamW optimizer</span>
 <span class="pl-k">import</span> <span class="pl-s1">tensorflow_hub</span> <span class="pl-k">as</span> <span class="pl-s1">hub</span>
