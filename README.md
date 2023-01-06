@@ -15,7 +15,7 @@ The Advanced model is built with a BERT encoder and a custom Recurrent Neural Ne
 
 * [Blog Post](Blog/Blog_Post.md)
 * [Project presentation (Powerpoint)](Project_Presentation.pptx)
-* [Notebook of the development of the Advanced model](Commercial_API_notebook)
+* [Notebook of the development of the Advanced model](Commercial_API_notebook.ipynb)
 * [Notebook of the testing process of the Commercial API](Commercial_API_notebook.ipynb)
 
 <!-- 
